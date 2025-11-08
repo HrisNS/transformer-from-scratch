@@ -2,20 +2,6 @@
 
 基于Transformer的词级莎士比亚文本生成模型，使用PyTorch实现。
 
-## 项目结构
-
-word-transformer-shakespeare/
-├── src/ # 源代码
-│ ├── tokenizer.py # 词级tokenizer
-│ ├── model.py # Transformer模型定义
-│ ├── dataset.py # 数据集处理
-│ ├── train.py # 训练器类
-│ └── generate.py # 文本生成函数
-├── scripts/
-│ └── run.sh # 运行脚本
-├── requirements.txt # 依赖包
-└── README.md # 项目说明
-
 
 ## 硬件要求
 
@@ -27,3 +13,22 @@ word-transformer-shakespeare/
 
 ```bash
 pip install -r requirements.txt
+```
+
+## 训练模型
+
+```bash
+cd src
+python -c "
+import torch
+torch.manual_seed(42)
+from main import main
+main()
+"
+```
+
+## 生成文本
+```bash
+cd src
+python generate.py
+```
