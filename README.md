@@ -1,16 +1,29 @@
 # transformer-from-scratch
-精确运行命令（含随机种子）：
 
-# 安装
+基于Transformer的词级莎士比亚文本生成模型，使用PyTorch实现。
+
+## 项目结构
+
+word-transformer-shakespeare/
+├── src/ # 源代码
+│ ├── tokenizer.py # 词级tokenizer
+│ ├── model.py # Transformer模型定义
+│ ├── dataset.py # 数据集处理
+│ ├── train.py # 训练器类
+│ └── generate.py # 文本生成函数
+├── scripts/
+│ └── run.sh # 运行脚本
+├── requirements.txt # 依赖包
+└── README.md # 项目说明
+
+
+## 硬件要求
+
+- **最低配置**: 4GB RAM, 2GB GPU内存
+- **推荐配置**: 8GB RAM, 4GB+ GPU内存
+- **存储空间**: 至少500MB可用空间
+
+## 安装依赖
+
+```bash
 pip install -r requirements.txt
-
-# 训练
-python src/train.py --dataset tiny_shakespeare --model_dim 128 --n_layers 2 --n_heads 4 \
-    --batch_size 32 --seq_len 64 --lr 3e-4 --epochs 10 --seed 42 --save_dir results/
-
-
-硬件要求：一块 GPU (推荐)，但小模型在 CPU 上也能跑（较慢）。
-
-完整重现实验的 exact 命令行（上面即为 exact）。
-
-说明随机性控制：torch.manual_seed(seed); random.seed(seed); np.random.seed(seed)。
