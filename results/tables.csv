@@ -1,1 +1,6 @@
-
+﻿Model Configuration,Validation Loss,Perplexity,Notes
+"Baseline (d=128, h=4, 2 layers)",2.09,8.084915164305059,Baseline - best
+w/o Positional Encoding,2.95,19.10595372823165,No positional info; worse
+h=2 heads (d=128),2.45,11.588346719223392,Fewer heads; worse
+Post-LN variant,2.2,9.025013499434122,Post-LN slightly worse
+ReLU activation,2.32,10.175674306073333,ReLU less smooth
